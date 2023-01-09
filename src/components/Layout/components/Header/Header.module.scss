@@ -8,6 +8,7 @@
 
 .inner {
    width: var(--default-layout-width);
+   padding: 0 24px;
    height: 100%;
    margin: auto;
    display: flex;
@@ -106,4 +107,5 @@
    margin-left: 28px;
    background-color: transparent;
    padding: 4px 8px;
+   cursor: pointer;
 }
