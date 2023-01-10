@@ -8,6 +8,11 @@
       align-items: center;
       height: 42px;
       border-radius: 0;
+      color: rgba(1, 1, 1, 0.8);
+   }
+
+   & .seperate {
+      border-top: 1px solid rgba(22, 24, 35, 0.24);
    }
 }
 
@@ -30,6 +35,7 @@
    width: 50px;
    height: 100%;
    background-color: transparent;
+   cursor: pointer;
 }
 
 .header-title {

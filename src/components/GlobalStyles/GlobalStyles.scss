@@ -4,7 +4,7 @@
 :root {
    --primary: #fe2b54;
    --black: #000;
-   --text-color: #333;
+   --text-color: #161823;
    //Default layout
    --default-layout-header-height: 60px;
    --default-layout-width: 1150px;
@@ -39,4 +39,24 @@ input,
 a[href] {
    text-decoration: none;
    color: var(--text-color);
+}
+
+//Custom tippy tooltip
+body {
+   .tippy-box {
+      border-radius: 8px;
+      background-color: rgba(84, 84, 84, 0.92);
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 28px;
+   }
+
+   .tippy-content {
+      height: 38px;
+      padding: 5px 10px;
+   }
+
+   .tippy-arrow {
+      color: rgba(84, 84, 84, 0.92);
+   }
 }

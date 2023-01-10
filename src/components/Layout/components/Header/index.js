@@ -7,12 +7,19 @@ import {
    faMagnifyingGlass,
    faPlus,
    faEllipsisVertical,
-   faCircle,
    faCircleQuestion,
    faEarthAsia,
    faKeyboard,
+   faCoins,
+   faGear,
+   faUser,
+   faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faMessage } from '@fortawesome/free-regular-svg-icons';
+
 import Tippy from '@tippyjs/react/headless';
+import TippyToast from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
 
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
@@ -57,6 +64,32 @@ const cx = classNames.bind(styles);
 function Header() {
    const [searchResult, setSearchResult] = useState([1]);
 
+   const currentUser = true;
+
+   const userMenu = [
+      {
+         icon: <FontAwesomeIcon icon={faUser} />,
+         title: 'View profile',
+         to: '/profile',
+      },
+      {
+         icon: <FontAwesomeIcon icon={faCoins} />,
+         title: 'Get coins',
+         to: '/coin',
+      },
+      {
+         icon: <FontAwesomeIcon icon={faGear} />,
+         title: 'Settings',
+         to: '/setting',
+      },
+      ...MENU_ITEMS,
+      {
+         icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+         title: 'Log out',
+         to: '/logout',
+         seperate: true,
+      },
+   ];
    const handleMenuChange = (menuItem) => {
       console.log(menuItem);
    };
@@ -95,16 +128,44 @@ function Header() {
                </div>
             </Tippy>
 
-            <div className={cx('action')}>
-               <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
-                  Upload
-               </Button>
-               <Button primary>Log in</Button>
-
-               <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
-                  <button className={cx('more-btn')}>
-                     <FontAwesomeIcon icon={faEllipsisVertical} />
-                  </button>
+            {/* Actions */}
+            <div className={cx('actions')}>
+               {currentUser ? (
+                  <div className={cx('current-user')}>
+                     <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
+                        Upload
+                     </Button>
+                     <TippyToast delay={[0, 0]} content="Inbox">
+                        <button className={cx('action-btn', 'message-icon')}>
+                           <FontAwesomeIcon icon={faMessage} />
+                        </button>
+                     </TippyToast>
+                     <TippyToast delay={[0, 0]} content="Message">
+                        <button className={cx('action-btn')}>
+                           <FontAwesomeIcon icon={faEnvelope} />
+                        </button>
+                     </TippyToast>
+                  </div>
+               ) : (
+                  <>
+                     <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
+                        Upload
+                     </Button>
+                     <Button primary>Log in</Button>
+                  </>
+               )}
+               <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                  {currentUser ? (
+                     <img
+                        src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                        alt=""
+                        className={cx('user-avatar')}
+                     />
+                  ) : (
+                     <button className={cx('more-btn')}>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                     </button>
+                  )}
                </Menu>
             </div>
          </div>

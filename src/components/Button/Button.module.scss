@@ -1,7 +1,7 @@
 .wrapper {
    font-weight: 700;
    font-size: 1.6rem;
-   padding: 9px 4px;
+   padding: 9px 12px;
    min-width: 100px;
    border-radius: 4px;
    background-color: #fff;
@@ -21,9 +21,9 @@
       opacity: 0.5;
    }
 
-   & .icon {
-      margin-left: 8px;
-   }
+   // & .icon {
+   //    margin-left: 4px;
+   // }
 }
 
 .icon {
@@ -34,7 +34,7 @@
 
 .icon + .title,
 .title + .icon {
-   margin-left: 8px;
+   margin-left: 4px;
 }
 
 //Button Types
