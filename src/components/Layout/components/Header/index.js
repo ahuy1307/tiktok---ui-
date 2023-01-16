@@ -18,7 +18,7 @@ import {
    LanguageIcon,
    FeedbackIcon,
 } from '~/components/Icons';
-import Image from '~/components/Image';
+import Image from '~/components/Images';
 import Search from '../Search';
 
 const MENU_ITEMS = [
