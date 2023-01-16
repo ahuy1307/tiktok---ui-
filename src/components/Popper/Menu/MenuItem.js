@@ -4,7 +4,6 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 function MenuItem({ data, onClick }) {
-   console.log(data);
    return (
       <Button
          className={cx('menu-item', data.seperate && 'seperate')}

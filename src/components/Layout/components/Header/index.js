@@ -7,15 +7,9 @@ import {
    faMagnifyingGlass,
    faPlus,
    faEllipsisVertical,
-   faCircleQuestion,
-   faEarthAsia,
    faKeyboard,
-   faCoins,
-   faGear,
-   faUser,
    faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope, faMessage } from '@fortawesome/free-regular-svg-icons';
 
 import Tippy from '@tippyjs/react/headless';
 import TippyToast from '@tippyjs/react';
@@ -27,10 +21,20 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import {
+   CoinsIcon,
+   InboxIcon,
+   MessageIcon,
+   ProfileIcon,
+   SettingIcon,
+   LanguageIcon,
+   FeedbackIcon,
+} from '~/components/Icons';
+import Image from '~/components/Image';
 
 const MENU_ITEMS = [
    {
-      icon: <FontAwesomeIcon icon={faEarthAsia} />,
+      icon: <LanguageIcon />,
       title: 'English',
       children: {
          title: 'Language',
@@ -49,7 +53,7 @@ const MENU_ITEMS = [
       },
    },
    {
-      icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+      icon: <FeedbackIcon />,
       title: 'Feedback and help',
       to: '/feedback',
    },
@@ -68,17 +72,17 @@ function Header() {
 
    const userMenu = [
       {
-         icon: <FontAwesomeIcon icon={faUser} />,
+         icon: <ProfileIcon />,
          title: 'View profile',
          to: '/profile',
       },
       {
-         icon: <FontAwesomeIcon icon={faCoins} />,
+         icon: <CoinsIcon />,
          title: 'Get coins',
          to: '/coin',
       },
       {
-         icon: <FontAwesomeIcon icon={faGear} />,
+         icon: <SettingIcon />,
          title: 'Settings',
          to: '/setting',
       },
@@ -135,14 +139,14 @@ function Header() {
                      <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
                         Upload
                      </Button>
-                     <TippyToast delay={[0, 0]} content="Inbox">
+                     <TippyToast delay={[0, 0]} content="Message">
                         <button className={cx('action-btn', 'message-icon')}>
-                           <FontAwesomeIcon icon={faMessage} />
+                           <MessageIcon />
                         </button>
                      </TippyToast>
-                     <TippyToast delay={[0, 0]} content="Message">
-                        <button className={cx('action-btn')}>
-                           <FontAwesomeIcon icon={faEnvelope} />
+                     <TippyToast delay={[0, 0]} content="Inbox">
+                        <button className={cx('action-btn', 'inbox-icon')}>
+                           <InboxIcon />
                         </button>
                      </TippyToast>
                   </div>
@@ -156,10 +160,11 @@ function Header() {
                )}
                <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                   {currentUser ? (
-                     <img
-                        src="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                     <Image
+                        src="https://tinypng.com/images/example-shrunk.png"
                         alt=""
                         className={cx('user-avatar')}
+                        fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                      />
                   ) : (
                      <button className={cx('more-btn')}>
