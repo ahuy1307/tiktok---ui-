@@ -16,6 +16,10 @@
    justify-content: space-between;
 }
 
+.logo {
+   display: flex;
+}
+
 //Actions
 .actions {
    display: flex;
@@ -54,7 +58,8 @@
 }
 
 .inbox-icon::after {
-   content: '13';
+   content: '12';
+   font-family: var(--font-family);
    position: absolute;
    top: 0;
    right: 4px;
@@ -62,7 +67,7 @@
    color: #fff;
    font-weight: 600;
    font-size: 1.2rem;
-   padding: 2px 6px;
+   padding: 3px 6px;
    border-radius: 98px;
 }
 .user-avatar {

@@ -5,16 +5,20 @@ import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
 import Profile from '~/pages/Profile';
 
+import routes from '~/config/routes';
+import Search from '~/components/Layout/components/Search';
+
 const publicRoutes = [
-   //Kh can login cung xem duoc
-   { path: '/', component: Home },
-   { path: '/following', component: Following },
-   { path: '/@/:nickname', component: Profile },
-   { path: '/upload', component: Upload, layout: HeaderOnly },
+   //Not login
+   { path: routes.home, component: Home },
+   { path: routes.following, component: Following },
+   { path: routes.profile, component: Profile },
+   { path: routes.upload, component: Upload, layout: HeaderOnly },
+   { path: routes.search, component: Search, layout: null },
 ];
 
 const privateRoutes = [
-   //Phai login moi xem duoc
+   //Force login to read data
 ];
 
 export { publicRoutes, privateRoutes };

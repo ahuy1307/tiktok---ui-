@@ -21,6 +21,7 @@ import {
 import Image from '~/components/Images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
+import routes from '~/config/routes';
 
 const MENU_ITEMS = [
    {
@@ -89,7 +90,7 @@ function Header() {
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <Link to="/" className={cx('logo')}>
+            <Link to={routes.home} className={cx('logo')}>
                <img src={images.logo.default} alt="" />
             </Link>
 

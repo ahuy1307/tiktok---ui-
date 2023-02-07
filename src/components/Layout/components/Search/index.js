@@ -79,6 +79,11 @@ function Search() {
       inputRef.current.focus();
    };
 
+   const handleChange = (e) => {
+      const searchValue = e.target.value;
+      if (searchValue.startsWith(' ')) return;
+      setSearchValue(searchValue);
+   };
    return (
       <Tippy
          interactive
@@ -108,7 +113,7 @@ function Search() {
                ref={inputRef}
                value={searchValue}
                placeholder="Search accounts and videos"
-               onChange={(e) => setSearchValue(e.target.value)}
+               onChange={handleChange}
                onFocus={() => setFocused(true)}
             />
             {searchValue && !loading && (
