@@ -86,6 +86,7 @@ function Search() {
    };
    return (
       <Tippy
+         appendTo={() => document.body}
          interactive
          visible={searchResult.length > 0 && focused}
          render={(attrs) => (

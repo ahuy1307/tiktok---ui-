@@ -1,5 +1,6 @@
 .menu-list {
    width: 224px;
+   margin-top: 6px;
 
    .menu-item {
       margin-left: 0;
@@ -22,6 +23,13 @@
 
 .menu-popper {
    padding-bottom: 8px;
+   display: flex;
+   flex-direction: column;
+}
+
+.menu-scroll {
+   overflow: auto;
+   overscroll-behavior: contain;
 }
 
 //header
@@ -29,6 +37,7 @@
    height: 50px;
    position: relative;
    margin-top: -8px;
+   flex-shrink: 0;
 }
 
 .back-icon {

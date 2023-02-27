@@ -22,7 +22,6 @@ import Image from '~/components/Images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
 import routes from '~/config/routes';
-
 const MENU_ITEMS = [
    {
       icon: <LanguageIcon />,

@@ -8,4 +8,5 @@ export const get = async (path, options = {}) => {
    const res = await request.get(path, options);
    return res.data;
 };
+
 export default request;
