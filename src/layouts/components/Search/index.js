@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import { useEffect, useRef, useState } from 'react';
-import * as searchServices from '~/apiServices/searchService';
+import * as searchServices from '~/services/searchService';
 import { useDebounce } from '~/hooks';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';

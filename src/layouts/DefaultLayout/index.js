@@ -3,7 +3,6 @@ import classNames from 'classnames/bind';
 
 import Header from '../components/Header';
 import Sidebar from './Sidebar';
-import Home from '~/pages/Home';
 
 const cx = classNames.bind(styles);
 
