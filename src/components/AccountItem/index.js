@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from '../Images';
@@ -20,5 +21,12 @@ function AccountItem({ avatar, nickname, full_name, tick }) {
       </Link>
    );
 }
+
+AccountItem.propTypes = {
+   avatar: PropTypes.string.isRequired,
+   nickname: PropTypes.string.isRequired,
+   full_name: PropTypes.string.isRequired,
+   tick: PropTypes.bool.isRequired,
+};
 
 export default AccountItem;
