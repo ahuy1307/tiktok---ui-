@@ -120,7 +120,9 @@ function Header() {
                      <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
                         Upload
                      </Button>
-                     <Button primary>Log in</Button>
+                     <Button primary to="/">
+                        Log in
+                     </Button>
                   </>
                )}
                <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>

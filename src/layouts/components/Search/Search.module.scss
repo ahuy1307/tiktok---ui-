@@ -23,6 +23,7 @@
       height: 100%;
       color: var(--black);
       caret-color: var(--primary);
+      margin-right: 24px;
    }
 
    input:not(:placeholder-shown) ~ .search-btn {
@@ -47,6 +48,7 @@
 .loading {
    position: absolute;
    top: 50%;
+   right: 0;
    transform: translateY(-50%);
    right: calc(var(--search-btn-width) + 16px);
    color: rgba(22, 24, 35, 0.34);

@@ -61,10 +61,9 @@
 }
 
 .primary {
-   background-color: var(--primary);
    color: #fff;
+   background-color: var(--primary);
    border-color: var(--primary);
-
    &:hover {
       border-color: var(--primary);
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;

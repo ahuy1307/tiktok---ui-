@@ -35,6 +35,14 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       });
    };
 
+   // back previous menu
+   const hadleBack = () => {
+      setHistory((prev) => {
+         prev.splice(prev.length - 1, 1);
+         return [...prev];
+      });
+   };
+
    return (
       <Tippy
          // visible
@@ -46,22 +54,12 @@ function Menu({ children, items = [], onChange = defaultFn }) {
          render={(attrs) => (
             <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                <PopperWrapper className={cx('menu-popper')}>
-                  {history.length > 1 && (
-                     <Header
-                        title={current.title}
-                        onBack={() => {
-                           setHistory((prev) => {
-                              prev.splice(prev.length - 1, 1);
-                              return [...prev];
-                           });
-                        }}
-                     />
-                  )}
+                  {history.length > 1 && <Header title={current.title} onBack={hadleBack} />}
                   <div className={cx('menu-scroll')}>{renderItem()}</div>
                </PopperWrapper>
             </div>
          )}
-         onHide={() => setHistory((prev) => prev.slice(0, 1))}
+         onHide={() => setHistory((prev) => prev.slice(0, 1))} //Reset to firstPage when hide Menu
       >
          {children}
       </Tippy>
