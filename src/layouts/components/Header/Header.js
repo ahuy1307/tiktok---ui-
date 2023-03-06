@@ -9,80 +9,22 @@ import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
-import {
-   CoinsIcon,
-   InboxIcon,
-   MessageIcon,
-   ProfileIcon,
-   SettingIcon,
-   LanguageIcon,
-   FeedbackIcon,
-} from '~/components/Icons';
+import LoginModal from '~/components/Modal/LoginModal';
+
+import { InboxIcon, MessageIcon } from '~/components/Icons';
 import Image from '~/components/Images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
 import config from '~/config';
-
-const MENU_ITEMS = [
-   {
-      icon: <LanguageIcon />,
-      title: 'English',
-      children: {
-         title: 'Language',
-         data: [
-            {
-               type: 'language',
-               code: 'en',
-               title: 'English',
-            },
-            {
-               type: 'language',
-               code: 'vi',
-               title: 'Tiếng Việt',
-            },
-         ],
-      },
-   },
-   {
-      icon: <FeedbackIcon />,
-      title: 'Feedback and help',
-      to: '/feedback',
-   },
-   {
-      icon: <FontAwesomeIcon icon={faKeyboard} />,
-      title: 'Keyboard shorcuts',
-   },
-];
-
+import useModal from '~/hooks/useModal';
+import { MENU_ITEMS, userMenu } from '~/temp/user';
 const cx = classNames.bind(styles);
 
 function Header() {
-   const currentUser = true;
+   const currentUser = false;
 
-   const userMenu = [
-      {
-         icon: <ProfileIcon />,
-         title: 'View profile',
-         to: '/profile',
-      },
-      {
-         icon: <CoinsIcon />,
-         title: 'Get coins',
-         to: '/coin',
-      },
-      {
-         icon: <SettingIcon />,
-         title: 'Settings',
-         to: '/setting',
-      },
-      ...MENU_ITEMS,
-      {
-         icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
-         title: 'Log out',
-         to: '/logout',
-         seperate: true,
-      },
-   ];
+   const { isShow, toggle } = useModal();
+
    const handleMenuChange = (menuItem) => {
       console.log(menuItem);
    };
@@ -120,9 +62,10 @@ function Header() {
                      <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
                         Upload
                      </Button>
-                     <Button primary to="/">
+                     <Button primary to="/" onClick={toggle}>
                         Log in
                      </Button>
+                     <LoginModal isShow={isShow} hide={toggle} />
                   </>
                )}
                <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>

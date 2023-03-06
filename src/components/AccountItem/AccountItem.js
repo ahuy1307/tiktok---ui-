@@ -7,26 +7,23 @@ import styles from './AccountItem.module.scss';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
-function AccountItem({ avatar, nickname, full_name, tick }) {
+function AccountItem({ data, hoverActive = false }) {
    return (
-      <Link to={`/@/${nickname}`} className={cx('wrapper')}>
-         <Image className={cx('avatar')} src={avatar} alt={nickname} />
+      <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+         <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
          <div className={cx('info')}>
             <p className={cx('name')}>
-               <p>{full_name}</p>
-               {tick && <FontAwesomeIcon icon={faCheckCircle} className={cx('check-icon')} />}
+               <p>{data.full_name}</p>
+               {data.tick && <FontAwesomeIcon icon={faCheckCircle} className={cx('check-icon')} />}
             </p>
-            <p className={cx('user-name')}>{nickname}</p>
+            <p className={cx('user-name')}>{data.nickname}</p>
          </div>
       </Link>
    );
 }
 
 AccountItem.propTypes = {
-   avatar: PropTypes.string.isRequired,
-   nickname: PropTypes.string.isRequired,
-   full_name: PropTypes.string.isRequired,
-   tick: PropTypes.bool.isRequired,
+   data: PropTypes.object.isRequired,
 };
 
 export default AccountItem;
