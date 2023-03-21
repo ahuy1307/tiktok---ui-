@@ -1,0 +1,72 @@
+.share-list {
+   display: flex;
+   flex-direction: column;
+   background-color: #fff;
+   border-radius: 8px;
+   z-index: 1;
+   position: relative;
+   max-height: 448px;
+   // overflow-y: auto;
+
+   &.more {
+      overflow: auto;
+   }
+
+   &::-webkit-scrollbar {
+      width: 6px;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background: rgba(0, 0, 0, 0.15);
+   }
+}
+
+.btn {
+   background-color: transparent;
+   justify-content: flex-start;
+   padding: 10px 12px;
+   align-items: center;
+   width: 284px;
+   z-index: 1;
+   + .btn {
+      margin: 6px 0;
+   }
+
+   &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+   }
+}
+
+.arrow-popper {
+   bottom: -9px;
+   // width: 9px;
+   height: 9px;
+   overflow-y: clip;
+   z-index: 1;
+
+   &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      transform: translateX(-50%) translateY(-67%) rotate(45deg);
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+   }
+}
+
+// .arrow-popper.arrowTop {
+//    bottom: initial;
+//    top: -9px;
+
+//    &::before {
+//       transform: translateX(-50%) translateY(25%) rotate(45deg);
+//    }
+// }
+
+.btn-more {
+   text-align: center;
+   font-size: 2rem;
+   cursor: pointer;
+}

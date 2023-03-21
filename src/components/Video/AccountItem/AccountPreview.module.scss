@@ -1,0 +1,69 @@
+.preview {
+   width: 320px;
+   box-sizing: border-box;
+   padding: 20px;
+}
+.preview-container {
+   display: flex;
+   justify-content: space-between;
+
+   .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+   }
+
+   .btn {
+      height: 34px;
+   }
+}
+
+.user-name {
+   color: rgb(22, 24, 35);
+   font-weight: 700;
+   font-size: 1.8rem;
+   line-height: 22px;
+   margin-top: 12px;
+   display: flex;
+   align-items: center;
+
+   .icon {
+      width: 14px;
+      color: rgb(32, 213, 236);
+      margin-left: 4px;
+   }
+}
+
+.name {
+   color: rgb(22, 24, 35);
+   font-weight: 600;
+   font-size: 1.4rem;
+   line-height: 20px;
+   margin-bottom: 32px;
+}
+
+.count {
+   font-weight: 700;
+   margin-right: 6px;
+   font-size: 1.7rem;
+   line-height: 20px;
+}
+
+.follower,
+.like {
+   color: rgba(22, 24, 35, 0.75);
+   font-size: 17px;
+   line-height: 20px;
+   display: inline-block;
+}
+
+.follower {
+   margin-right: 12px;
+}
+
+.bio {
+   border-top: 1px solid rgba(22, 24, 35, 0.12);
+   font-size: 1.4rem;
+   margin-top: 16px;
+   padding-top: 16px;
+}

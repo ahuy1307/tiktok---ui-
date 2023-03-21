@@ -59,7 +59,11 @@ function Header() {
                   </div>
                ) : (
                   <>
-                     <Button text leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}>
+                     <Button
+                        text
+                        leftIcon={<FontAwesomeIcon icon={faPlus} className={cx('plus-icon')} />}
+                        onClick={toggle}
+                     >
                         Upload
                      </Button>
                      <Button primary to="/" onClick={toggle}>

@@ -29,7 +29,6 @@ function SuggestedAccounts({ title, btn }) {
 
       fetchApi();
    }, []);
-
    const handleToggleSeeAll = () => {
       setSeeAll(!seeAll);
    };

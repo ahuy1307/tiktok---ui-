@@ -1,0 +1,23 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   border-bottom: 1px solid rgba(22, 24, 35, 0.1);
+   scroll-snap-type: y;
+   position: relative;
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 0;
+   .btn {
+      padding: 4px 12px;
+   }
+}
+
+.video-item {
+   display: flex;
+   align-items: flex-end;
+}

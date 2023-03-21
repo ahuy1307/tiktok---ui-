@@ -1,5 +1,31 @@
 .wrapper {
-   width: 356px;
-   padding: 20px 8px 26px;
+   // padding: 20px 8px 26px;
    margin-left: -20px;
+}
+
+.inner-fixed {
+   bottom: 0;
+   position: fixed;
+   top: 60px;
+   // height: 100%;
+   width: 356px;
+   // z-index: 9999;
+}
+
+.scrollbar-view {
+   overflow: hidden scroll !important;
+   margin-bottom: 0 !important;
+}
+
+.scrollbar-track {
+   top: 0;
+   bottom: 0;
+   right: 3px;
+   transition: opacity 0.5s !important;
+}
+
+.scrollbar-thumb {
+   border-radius: 4px;
+   height: 186px !important;
+   background-color: rgba(22, 24, 35, 0.06);
 }

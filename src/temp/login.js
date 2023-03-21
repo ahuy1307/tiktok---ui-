@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQrcode } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-
 import {
    KakaoTalkIcon,
    FacebookIcon,
@@ -13,16 +9,37 @@ import {
    ProfileIcon,
    GoogleIcon,
 } from '~/components/Icons';
+import LoginEmail from '~/components/Modal/LoginModal/LoginEmail';
+import LoginQR from '~/components/Modal/LoginModal/LoginQR';
+import RegisterEmail from '~/components/Modal/LoginModal/RegisterEmail';
 
+export const MENU_ITEM = [
+   {
+      title: 'Continue with Twitter',
+      icon: <TwitterIcon />,
+      disabled: true,
+   },
+   {
+      title: 'Continue with LINE',
+      icon: <LineIcon />,
+      disabled: true,
+   },
+   {
+      title: 'Continue with KakaoTalk',
+      icon: <KakaoTalkIcon />,
+      disabled: true,
+   },
+];
 export const loginData = {
-   title: 'Get more of what you love when you log in to TikTok',
+   title: 'Log in to TikTok',
    data: [
       {
          title: 'Use QR code',
          icon: <QRIcon />,
          children: {
             title: 'Login with QR code',
-            data: null,
+            type: 'component',
+            data: LoginQR,
          },
       },
       {
@@ -30,7 +47,8 @@ export const loginData = {
          icon: <ProfileIcon />,
          children: {
             title: 'Login',
-            data: null,
+            type: 'component',
+            data: LoginEmail,
          },
       },
       {
@@ -43,21 +61,7 @@ export const loginData = {
          icon: <GoogleIcon />,
          disabled: true,
       },
-      {
-         title: 'Continue with Twitter',
-         icon: <TwitterIcon />,
-         disabled: true,
-      },
-      {
-         title: 'Continue with LINE',
-         icon: <LineIcon />,
-         disabled: true,
-      },
-      {
-         title: 'Continue with KakaoTalk',
-         icon: <KakaoTalkIcon />,
-         disabled: true,
-      },
+      ...MENU_ITEM,
       {
          title: 'Continue with Apple',
          icon: <AppleIcon />,
@@ -66,6 +70,31 @@ export const loginData = {
       {
          title: 'Continue with Instagram',
          icon: <InstagramIcon />,
+         disabled: true,
+      },
+   ],
+};
+
+export const registerData = {
+   title: 'Sign up for Tiktok',
+   data: [
+      {
+         title: 'Use phone or email',
+         icon: <ProfileIcon />,
+         children: {
+            title: 'Sign up',
+            type: 'component',
+            data: RegisterEmail,
+         },
+      },
+      {
+         title: 'Continue with Facebook',
+         icon: <FacebookIcon />,
+         disabled: true,
+      },
+      {
+         title: 'Continue with Google',
+         icon: <GoogleIcon />,
          disabled: true,
       },
    ],

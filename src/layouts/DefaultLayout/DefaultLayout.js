@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import DowloadApp from '~/components/DownloadApp';
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +15,7 @@ function DefaultLayout({ children }) {
             <Sidebar />
             <div className={cx('content')}>{children}</div>
          </div>
+         <DowloadApp />
       </div>
    );
 }

@@ -12,6 +12,10 @@
       background: rgba(22, 24, 35, 0.03);
    }
 
+   &:nth-child(1) {
+      margin-top: 24px;
+   }
+
    &.active {
       color: var(--primary);
 

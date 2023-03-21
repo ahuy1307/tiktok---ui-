@@ -32,14 +32,10 @@
       vertical-align: middle;
    }
 }
-.title {
-   position: relative;
-   // top: 2px;
-}
 
 .icon + .title,
 .title + .icon {
-   margin-left: 4px;
+   margin-left: 8px;
 }
 
 //Button Types

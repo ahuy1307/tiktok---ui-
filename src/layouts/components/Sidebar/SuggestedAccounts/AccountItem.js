@@ -17,7 +17,7 @@ function AccountItem({ data }) {
          // visible
          interactive
          delay={[800, 0]}
-         placement="bottom-start"
+         placement="bottom"
          render={(attrs) => (
             <div tabIndex="-1" {...attrs}>
                <PopperWrapper>
